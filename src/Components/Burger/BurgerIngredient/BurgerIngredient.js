@@ -1,9 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cssClasses from './BurgerIngredient.css';
 
 const BurgerIngredient = props => getIngredientType(props.type);
+BurgerIngredient.PropTypes = {
+    type: PropTypes.string
+};
 
-const getIngredientType = (ingredient) => {
+const getIngredientType = ingredient => {
     const ingredientTypes = {
         'bread-bottom': <div className={cssClasses.BreadBottom}></div>,
         'bread-top': (
