@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import cssClasses from './BurgerIngredient.css';
 
 const BurgerIngredient = props => getIngredientType(props.type);
-BurgerIngredient.PropTypes = {
-    type: PropTypes.string
+
+BurgerIngredient.propTypes = {
+    type: PropTypes.string.isRequired
 };
 
 const getIngredientType = ingredient => {
@@ -17,8 +18,8 @@ const getIngredientType = ingredient => {
             </div>
         ),
         'meat': <div className={cssClasses.Meat}></div>,
-        'cheese': <div className={cssClasses.Meat}></div>,
-        'salad': <div className={cssClasses.Chees}></div>,
+        'cheese': <div className={cssClasses.Cheese}></div>,
+        'salad': <div className={cssClasses.Salad}></div>,
         'bacon': <div className={cssClasses.Bacon}></div>
     }
 
