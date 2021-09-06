@@ -10,8 +10,8 @@ const OrderSummary = props => {
             <ul>
                 {getIngredientList(props.ingredients)}
             </ul>
-            <p>Continue to Checkout</p>
-            
+            <p><b>Total: ${props.price.toFixed(2)}</b></p>
+            <p>Continue to Checkout?</p>
             <Button 
                 btnType="Danger"
                 clicked={props.cancelled}>
