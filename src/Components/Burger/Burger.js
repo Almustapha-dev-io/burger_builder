@@ -1,8 +1,10 @@
 import React from 'react';
 import cssClasses from './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
+import { withRouter } from 'react-router-dom';
 
 const Burger = props => {
+    console.log(props, 'From Burger!');
     let addedIngredients = transformIngredients(props.ingredients);
 
     if (addedIngredients.length < 1) {
@@ -12,13 +14,13 @@ const Burger = props => {
     return (
         <div className={cssClasses.Burger}>
             <BurgerIngredient type="bread-top"/>
-            {addedIngredients}
+                {addedIngredients}
             <BurgerIngredient type="bread-bottom"/>
         </div>
     );
 };
 
-const transformIngredients = ingredients => {
+const transformIngredients = ingredients => { 
     const ingredientKeys = Object.keys(ingredients);
 
     return ingredientKeys
@@ -33,4 +35,4 @@ const transformIngredients = ingredients => {
         .reduce((arr, el) => arr.concat(el), []);
 }
 
-export default Burger;
+export default withRouter(Burger);
